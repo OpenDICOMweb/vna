@@ -98,3 +98,4 @@ html/css/
 html/javascript/
 html/test/
 lib/src/base/old/
+/pubspec.lock
