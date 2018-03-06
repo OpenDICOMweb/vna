@@ -4,8 +4,6 @@
 // Author: Jim Philbin <jfphilbin@gmail.edu>
 // See /[package]/AUTHORS file for other contributors.
 
-import 'package:core/core.dart';
-
 import 'package:vna/src/config.dart';
 import 'package:vna/src/uid_db.dart';
 
