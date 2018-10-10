@@ -1,7 +1,7 @@
 
 
-import 'package:vna/vna.dart';
+// import 'package:vna/vna.dart';
 
-main(List<String> arguments) {
+void main(List<String> arguments) {
 
 }

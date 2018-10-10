@@ -1,26 +1,35 @@
-// Copyright (c) 2016, Open DICOMweb Project. All rights reserved.
-// Use of this source code is governed by the open source license
-// that can be found in the LICENSE file.
-// Author: Jim Philbin <jfphilbin@gmail.edu>
-// See /[package]/AUTHORS file for other contributors.
-
+//  Copyright (c) 2016, 2017, 2018,
+//  Poplar Hill Informatics and the American College of Radiology
+//  All rights reserved.
+//  Use of this source code is governed by the open source license
+//  that can be found in the odw/LICENSE file.
+//  Primary Author: Jim Philbin <jfphilbin@gmail.edu>
+//  See the AUTHORS file for other contributors.
+//
 import 'package:vna/src/utils.dart';
 
-class Configuration {
+///
+class VNAConfiguration {
+  /// The path where _this_ can be found.
   final String path;
+
+  /// A [Map] containing the configuration name/value pairs.
   final Map<String, dynamic> config;
 
-  factory Configuration.fromPath(String path) => load(path);
+  /// Create _this_ from the contents of the File at [path].
+  factory VNAConfiguration.fromPath(String path) => VNAConfiguration.load(path);
 
-  Configuration._( this.path, this.config);
+  /// Load _this_ from [path];
+  factory VNAConfiguration.load([String path = 'vna_config.json']) =>
+      VNAConfiguration._(path, loadMap(path));
 
-  String get configPath => config['configPath'];
-  String get uidDBPath => config['uidDBPath'];
+  VNAConfiguration._(this.path, this.config);
 
-  static load([String path ='vna_config.json']) =>
-      new Configuration._(path, loadMap(path));
+  /// The path to the VNA database.
+  String get dbPath => config['dbPath'];
 
-  static final Map<String, dynamic> defaultConfigMap = <String, dynamic>{
+  /// The default configuration.
+  static final Map<String, dynamic> defaultConfiguration = <String, dynamic>{
     'configPath': 'vna_config.json',
     'uidDBPath': 'vna_uids.json'
   };

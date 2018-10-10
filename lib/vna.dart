@@ -4,5 +4,5 @@
 // Author: Jim Philbin <jfphilbin@gmail.edu>
 // See the AUTHORS file for other contributors.
 
-export 'package:vna/src/uid_db.dart';
+export 'package:vna/src/vna_db.dart';
 export 'package:vna/src/config.dart';
