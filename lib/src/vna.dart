@@ -14,19 +14,20 @@ class VNA {
   /// The Database associated with _this_.
   final VnaDB db;
   /// The configuration of _this_.
-  final VNAConfiguration config;
+  final VnaConfiguration config;
 
 
   /// A DICOM Vendor Neutral Archive
   VNA(String name, this.config, [VnaDB db]) : db = db ??= VnaDB(name);
 
+  @override
+  String toString() => '$runtimeType(${db.name})';
+
   /// Load an existing [VNA].
   static void load() {
-    VNAConfiguration.load();
+    VnaConfiguration.load();
     VnaDB.load(_config.dbPath);
-
-
   }
 }
 
-final VNAConfiguration _config = VNAConfiguration.load();
+final VnaConfiguration _config = VnaConfiguration.load();

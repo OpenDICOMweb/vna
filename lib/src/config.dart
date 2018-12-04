@@ -9,28 +9,30 @@
 import 'package:vna/src/utils.dart';
 
 ///
-class VNAConfiguration {
+class VnaConfiguration {
   /// The path where _this_ can be found.
   final String path;
 
   /// A [Map] containing the configuration name/value pairs.
-  final Map<String, dynamic> config;
+  final Map<String, Object> config;
 
   /// Create _this_ from the contents of the File at [path].
-  factory VNAConfiguration.fromPath(String path) => VNAConfiguration.load(path);
+  factory VnaConfiguration.fromPath(String path) => VnaConfiguration.load(path);
 
   /// Load _this_ from [path];
-  factory VNAConfiguration.load([String path = 'vna_config.json']) =>
-      VNAConfiguration._(path, loadMap(path));
+  factory VnaConfiguration.load([String path = 'vna_config.json']) =>
+      VnaConfiguration._(path, loadMap(path));
 
-  VNAConfiguration._(this.path, this.config);
+  /// The default configuration.
+  VnaConfiguration.defaultConfiguration()
+      : path = '',
+        config = const <String, Object>{
+          'configPath': 'vna_config.json',
+          'uidDBPath': 'vna_uids.json'
+        };
+
+  VnaConfiguration._(this.path, this.config);
 
   /// The path to the VNA database.
   String get dbPath => config['dbPath'];
-
-  /// The default configuration.
-  static final Map<String, dynamic> defaultConfiguration = <String, dynamic>{
-    'configPath': 'vna_config.json',
-    'uidDBPath': 'vna_uids.json'
-  };
 }
