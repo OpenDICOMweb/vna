@@ -17,6 +17,7 @@ import 'package:core/core.dart';
 
 /// A singleton [class] that contains all [Study]s and [Patient]s
 /// in the running system.
+// ignore: prefer_mixin
 class ActiveStudies extends Object with MapMixin<Uid, Study> {
   /// A [Map] from a [Patient] PID to the associated [Patient].
   static final Map<String, Patient> _subjectsByPid = <String, Patient>{};

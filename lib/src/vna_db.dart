@@ -89,6 +89,7 @@ class EntityDB {
   List<String> patientsStudies(Patient patient) =>
       patientStudiesMap[patient.uid.asString];
 
+  @override
   String toString() => '''
 $runtimeType:
   $dirPath

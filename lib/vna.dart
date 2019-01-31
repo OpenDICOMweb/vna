@@ -8,4 +8,5 @@
 //
 export 'package:vna/src/config.dart';
 export 'package:vna/src/vna.dart';
+export 'package:vna/src/vna_cache.dart';
 export 'package:vna/src/vna_db.dart';

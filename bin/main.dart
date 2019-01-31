@@ -20,7 +20,7 @@ const Map<String, String> entities = <String,String>{
   'y': 'path1'
 };
 
-const testDB = <String, dynamic>{
+const Map<String, dynamic>testDB = <String, dynamic>{
   'dirPath': dirPath,
   'patientStudiesMap': patientStudies,
   'entitiesMap': entities
