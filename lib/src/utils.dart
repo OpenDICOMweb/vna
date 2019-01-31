@@ -6,6 +6,7 @@
 //  Primary Author: Jim Philbin <jfphilbin@gmail.edu>
 //  See the AUTHORS file for other contributors.
 //
+
 import 'dart:convert';
 import 'dart:io';
 
@@ -13,12 +14,12 @@ import 'dart:io';
 /// Loads a [Map<String, Object> from [path];
 Map loadMap(String path) {
   final source =  File(path).readAsStringSync();
-  return json.decode(source);
+  return jsonDecode(source);
 }
 
 /// Stores a [Map<String, Object> at [path];
-void storeMap(String path, Map map) {
-  final s = json.encode(map);
-   File(path).writeAsStringSync(s);
+void unloadMap(String path, Map map) {
+  final s = jsonEncode(map);
+  File(path).writeAsStringSync(s);
 }
 

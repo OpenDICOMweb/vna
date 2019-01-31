@@ -36,3 +36,4 @@ class VnaConfiguration {
   /// The path to the VNA database.
   String get dbPath => config['dbPath'];
 }
+
