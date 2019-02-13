@@ -7,7 +7,7 @@
 //  See the AUTHORS file for other contributors.
 //
 import 'package:vna/src/config.dart';
-import 'package:vna/src/vna_db_old.dart';
+import 'package:vna/src/vna_db.dart';
 
 /// A singleton class that contains global values
 class VNA {
