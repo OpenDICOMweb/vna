@@ -23,12 +23,12 @@ part 'entity_db.g.dart';
 class EntityDB {
   /// The default file where _this_ is stored.
   static const String entityPath = 'entity_db.json';
+
+  /// A value which means that _this_ has not been created from a file
+  /// containing the values for _this_.
   static final DateTime never = DateTime.tryParse('0000-01-01 00:00:00.000000');
 
-//  /// The default file where _this_ is stored.
-//  static const String patientStudiesPath = 'patient_studies_db.json';
-
-  /// The [dirPath] of the [Directory] where this database is stored.
+  /// The path of the [Directory] where _this_ is stored.
   final String dirPath;
 
   /// A [Map<String, List<String>>] of [Patient.uid] [String] to a
@@ -39,9 +39,11 @@ class EntityDB {
   /// of the corresponding entity.
   final Map<String, String> entitiesMap;
 
+  /// The [DateTime] when _this_ was last written to a stable store,
+  /// e.g. a file.
   DateTime _lastWritten;
 
-  /// Create an EntityDB.
+  /// Create an [EntityDB].
   EntityDB(this.dirPath, this.patientStudiesMap, this.entitiesMap,
       [DateTime lastWritten])
       : _lastWritten = lastWritten ??= never;

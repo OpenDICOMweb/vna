@@ -12,7 +12,7 @@ void main() {
   Server.initialize(name: 'entity_db/entity_db_test', level: Level.debug);
 
   group('Entity DB Tests', () {
-    const dirPath = 'C:/odw/sdk/io_extended/test/vna_db_test';
+    const dirPath = 'C:/odw/vna/test/vna_db_test';
 
     final ptUid0 = Uid();
     final pt0 = Patient('zero', ptUid0, null);
