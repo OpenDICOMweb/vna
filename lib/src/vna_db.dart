@@ -156,8 +156,7 @@ class VnaDB {
   /// Try to add an Entity to [entities].
   void _tryAddEntity(Object uuidOruid, Entity entity) {
     final e = entities[uuidOruid];
-    if (e != null)
-      return (e != entity) ? duplicateEntityError(e, entity) : null;
+    if (e != null && e != entity) duplicateEntityError(e, entity);
     entities[uuidOruid] = entity;
   }
 

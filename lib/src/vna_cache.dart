@@ -51,7 +51,10 @@ class EntityCache extends MapBase<Uid, Entity> {
   Iterable<Uid> get keys => dbMap.keys;
 
   @override
-  void clear() => unsupportedError();
+  void clear() {
+    unsupportedError();
+    return;
+  }
 
   @override
   Entity remove(Object key) => unsupportedError();
@@ -310,7 +313,7 @@ String entityMapToString(Map<Uid, Entity> map) {
   final entries = map.entries;
   final len = entries.length;
   var i = 0;
-  for (var entry in entries) {
+  for (final entry in entries) {
     final uid = entry.key;
     final path = entry.value.toPath();
     sb.write('"$uid": "$path"');

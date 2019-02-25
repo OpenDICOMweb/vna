@@ -71,7 +71,7 @@ ActiveStudies:
 
   String get studiesSummary {
     var out = '';
-    for (var s in _studies.values) out = s.format( Formatter());
+    for (final s in _studies.values) out = s.format( Formatter());
     return out;
   }
 
@@ -138,7 +138,7 @@ ActiveStudies:
   }
 
   Patient search(String pid, {PersonName name, Date dob}) {
-    for (var p in _subjects.values) {
+    for (final p in _subjects.values) {
       if ((pid == p.pid) &&
           (name == null || name == p.name) &&
           (dob == null || dob == p.dob)) return p;
